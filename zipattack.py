@@ -53,7 +53,7 @@ def dicProduce():
                                 d=str(d)
                                 s=d.zfill(temp)
                                 dic.write(s+'\n')
-                                print s
+    
                 elif choose1=='2':
                     for temp in range(high):
                         if(temp>=low):
