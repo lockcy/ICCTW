@@ -10,6 +10,8 @@ plt.rcParams['font.sans-serif']=['SimHei'] #解决中文乱码
 system_call=['System Idle Process','System','Regisrty','wininit.exe','svchost.exe','fontdrvhost.exe','services.exe','smss.exe'\
              +'lsass.exe']
 example=['KuGou.exe','SearchUI.exe','QQ.exe','explorer.exe','pycharm64.exe']
+
+#功能函数
 def get_tasklist():
     data=os.popen('tasklist /nh' ,'r')
     p1=[]
@@ -47,9 +49,10 @@ def get_tasklist():
     p1.append('system')
     p4.append(system)
 
+    #饼状图
     painter_pie(p1,p4)
 
-
+#绘制饼状图
 def painter_pie(data1,data2):
     plt.figure(figsize=(10, 9))  # 调节图形大小
     labels = data1  # 定义标签
@@ -69,6 +72,7 @@ def painter_pie(data1,data2):
     plt.title(time1, fontsize='large')
     plt.show()
 
+#绘制线图
 def painter_line(data1,time1,memory):
     fig=plt.figure(figsize=(10,10))
     #colors=['red','blue','green','black','orange']
@@ -85,7 +89,7 @@ def painter_line(data1,time1,memory):
     plt.ylabel('memory')
     plt.show()
 
-
+#获取当前时间
 def get_time():
     time_now=time.strftime('%H:%M',time.localtime(time.time()))
     #print ('time now->'+time_now)
